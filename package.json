@@ -12,12 +12,14 @@
     "express-jwt": "^5.3.0",
     "express-jwt-authz": "^1.0.0",
     "inversify": "^4.3.0",
+    "jsonwebtoken": "^8.4.0",
     "jwks-rsa": "^1.2.0",
     "node-couchdb": "^1.2.0",
-    "pos-models": "file:../pos-models/pos-models-0.0.5.tgz",
+    "pos-models": "file:../pos-models/pos-models-0.0.12.tgz",
     "reflect-metadata": "^0.1.10",
     "request": "^2.88.0",
     "rxjs": "^5.4.3",
+    "socket.io": "^2.2.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
