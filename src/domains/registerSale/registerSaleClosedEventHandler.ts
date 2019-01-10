@@ -1,19 +1,18 @@
-import { injectable, inject } from 'inversify';
+import { inject } from 'inversify';
 
 import SERVICE_IDENTIFIER from '../../constants/identifiers';
-import { InventoryService } from "../inventory/inventoryService";
-import { CustomerService } from "../customer/customerService";
-import { ProductService } from "../product/productService";
-import { EventHandler } from "../../shared/eventHandler";
-import { EventBase } from "../../shared/event";
-import { Customer, RegisterSale, RegisterPayment, PaymentType, RegisterSaleLineItem } from 'pos-models';
+import { InventoryService } from '../inventory/inventoryService';
+import { CustomerService } from '../customer/customerService';
+import { ProductService } from '../product/productService';
+import { EventHandler } from '../../shared/eventHandler';
+import { EventBase } from '../../shared/event';
+import { RegisterSale, RegisterSaleLineItem } from 'pos-models';
 import { StoreService } from '../store/storeService';
 
 declare const posMessageBroker;
 
 export class RegisterSaleClosedEvent implements EventBase {
-  constructor(public tenantId: string, public registerSale: RegisterSale) {
-  }
+  constructor(public tenantId: string, public registerSale: RegisterSale) { }
 }
 
 export class RegisterSaleClosedEventHandler extends EventHandler {
@@ -26,7 +25,7 @@ export class RegisterSaleClosedEventHandler extends EventHandler {
   }
 
   handle(event: RegisterSaleClosedEvent): void {
-    const {tenantId, registerSale} = event;
+    const { tenantId, registerSale } = event;
     this.updateInventory(tenantId, registerSale);
     if (registerSale.customerId) {
       this.updateCustomer(tenantId, registerSale)
@@ -54,7 +53,7 @@ export class RegisterSaleClosedEventHandler extends EventHandler {
       .then(([store, customer]) => {
         this.customerService.calculateCustomerValues(customer, sale.status, sale.payments, store);
         return this.customerService.updateCustomer(tenantId, customer);
-      })
+      });
   }
 
   updateInventory(tenantId: string, sale: RegisterSale) {

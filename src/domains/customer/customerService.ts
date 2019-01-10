@@ -1,5 +1,7 @@
 import { injectable, inject } from 'inversify';
-import { Customer, RegisterSaleStatus, RegisterPayment, PaymentType, PosStore } from 'pos-models';
+import { Customer, RegisterSaleStatus, RegisterPayment, PaymentType, PosStore, PointRequest, PointRequestAccepted } from 'pos-models';
+const uuid = require('uuid/v1');
+
 import { IStore } from '../../interfaces/store';
 import SERVICE_IDENTIFIER from '../../constants/identifiers';
 
@@ -11,6 +13,10 @@ export interface ICustomerService {
   createCustomer(tenantId: string, customer: Customer): Promise<Customer>;
 
   updateCustomer(tenantId: string, customer: Customer): Promise<Customer>;
+
+  findCustomerByPhoneNumber(tenantId: string, phoneNumber: string): Promise<Customer>;
+
+  applyRewardPoints(tenantId: string, { saleId, customerPhoneNumber, enablePoints }: PointRequest): Promise<PointRequestAccepted>;
 }
 
 @injectable()
@@ -36,6 +42,37 @@ export class CustomerService implements ICustomerService {
     return await this._store.update(tenantId, customer);
   }
 
+  async findCustomerByPhoneNumber(tenantId: string, phoneNumber: string): Promise<Customer> {
+    const customers = await this._store.find(tenantId, {
+      selector: {
+        phone: {
+          $eq: phoneNumber
+        }
+      }
+    });
+    return customers.length ? customers[0] : null;
+  }
+
+  /**
+   * Applies customer reward points. Must be initiated by bnm-point app.
+   * @param param0 PointRequest
+   */
+  async applyRewardPoints(tenantId, { saleId, customerPhoneNumber, enablePoints }: PointRequest): Promise<PointRequestAccepted> {
+    const customer = await this.findCustomerByPhoneNumber(tenantId, customerPhoneNumber);
+
+    if (customer === null) {
+      const newCustomer: any = {
+        id: uuid(),
+        phone: customerPhoneNumber,
+        currentPoints: enablePoints
+      };
+      this.createCustomer(tenantId, newCustomer);
+      return new PointRequestAccepted('', customerPhoneNumber, newCustomer.id, enablePoints, newCustomer.currentPoints, true);
+    } else {
+      return new PointRequestAccepted(customer.name, customer.phone, customer.id, enablePoints, customer.currentStorePoint + enablePoints, false);
+    }
+  }
+
   calculateCustomerValues(customer: Customer, saleStatus: RegisterSaleStatus, payments: RegisterPayment[], store: PosStore) {
     const totalCashPaid = this.getTotalAmountByPaymentType(PaymentType.Cash, payments);
     const totalCreditCardPaid = this.getTotalAmountByPaymentType(PaymentType.CreditCard, payments);
@@ -51,17 +88,15 @@ export class CustomerService implements ICustomerService {
     }
 
     // reward points calculation
-    const { useReward, rewardRateForCash = 0, rewardRateForCredit = 0 } = store;
-    if (useReward) {
-      const earnedPointsFromCashPayment = Math.round(totalCashPaid * rewardRateForCash / 100);
-      const earnedPointsFromCreditPayment = Math.round(totalCreditCardPaid * rewardRateForCredit / 100);
-      const totalPointsEarned = earnedPointsFromCashPayment + earnedPointsFromCreditPayment;
+    if (store.useReward) {
+      const totalPointsEarned = this.calculateEarnableRewordPoints(payments, store);
       customer.currentStorePoint += totalPointsEarned;
       customer.totalStorePoint += totalPointsEarned;
     }
 
     if (totalPaidStorePoints > 0) {
       customer.currentStorePoint -= totalPaidStorePoints;
+      // todo: add point transaction
     }
   }
 
@@ -83,4 +118,6 @@ export class CustomerService implements ICustomerService {
       .map(p => p.amount)
       .reduce((acc, cur) => acc + cur, 0);
   }
+
+
 }

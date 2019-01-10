@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 
 export interface IRegisterSaleService {
   getRegisterSales(tenantId: string): Promise<Array<RegisterSale>>;
-  getRegisterSale(tenantId: string, id: string): Promise<RegisterSale>;
+  getRegisterSale(tenantId: string, saleId: string): Promise<RegisterSale>;
   createRegisterSale(tenantId: string, registerSale: RegisterSale): Promise<RegisterSale>;
   updateRegisterSale(tenantId: string, registerSale: RegisterSale): Promise<RegisterSale>;
 }
@@ -20,8 +20,9 @@ export class RegisterSaleService implements IRegisterSaleService {
   getRegisterSales(tenantId: string): Promise<RegisterSale[]> {
     throw new Error("Method not implemented.");
   }
-  getRegisterSale(tenantId: string, id: string): Promise<RegisterSale> {
-    throw new Error("Method not implemented.");
+
+  async getRegisterSale(tenantId: string, saleId: string): Promise<RegisterSale> {
+    return await this._store.get(tenantId, `registerSale_${saleId}`);
   }
 
   async getRegisterSalesByTimeRange(tenantId: string, startTime: string, endTime: string): Promise<RegisterSale[]> {

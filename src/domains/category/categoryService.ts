@@ -41,13 +41,11 @@ export class CategoryService implements ICategoryService {
 
   async deleteCategory(tenantId: string, id: string): Promise<Category> {
     const documentId = `category_${id}`;
-    return await this._store.get(tenantId, documentId)
-      .then(category => {
-        if (category) {
-          return this._store.delete(tenantId, documentId, category._rev);
-        } else {
-          throw new Error(`Cannot find category ${id}`);
-        }
-      });
+    const category = await this._store.get(tenantId, documentId)
+    if (category) {
+      return await this._store.delete(tenantId, documentId, category._rev);
+    } else {
+      throw new Error(`Cannot find category ${id}`);
+    }
   }
 }

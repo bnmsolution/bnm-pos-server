@@ -1,7 +1,7 @@
 import {NodeCouch} from '../src/store/node-couch';
 
 const couch = new NodeCouch({
-  host: 'localhost',
+  host: 'ec2-35-183-130-127.ca-central-1.compute.amazonaws.com',
   protocol: 'http',
   port: '5984',
   auth: {
@@ -78,5 +78,20 @@ describe('NodeCouch test', () => {
       expect(doc).not.toBe(null);
     });
   });
+
+  it('test.', () => {
+    return couch.find('db-dd695360-fe7b-11e8-be96-83393183a7cb', {
+      selector: {
+        phone: {
+          $eq: '011-1234-3333'
+        }
+      }
+    }).then(doc => {
+      console.log(doc);
+    }, err => {
+      console.log(err);
+    });
+  });
+
 
 });

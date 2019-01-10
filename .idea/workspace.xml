@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="435f9280-9ca7-4b74-accc-1fdec2a5c3fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__test__/couch.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__test__/couch.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domains/customer/customerService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domains/customer/customerService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/inversify.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/inversify.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/posMessageBroker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/posMessageBroker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/eventHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/eventHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/couch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/couch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/couch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/node-couch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/node-couch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/node-couch.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,14 +38,14 @@
     <session id="1612939627">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -39,27 +53,27 @@
           <entry key="796" value="1" />
           <entry key="Docker" value="1" />
           <entry key="Local" value="1" />
-          <entry key="env" value="6" />
+          <entry key="env" value="7" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="21" />
-          <entry key="json" value="5" />
-          <entry key="ts" value="100" />
+          <entry key="js" value="26" />
+          <entry key="json" value="6" />
+          <entry key="ts" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="6" />
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="22" />
+          <entry key=".env file" value="7" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="27" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Terminal Session" value="1" />
-          <entry key="TypeScript" value="100" />
+          <entry key="TypeScript" value="110" />
           <entry key="tsconfig" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="11" />
+          <entry key="TypeScriptServerServiceImpl" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -70,7 +84,7 @@
           <entry key="gitignore" value="6" />
           <entry key="js" value="9" />
           <entry key="json" value="3" />
-          <entry key="ts" value="3744" />
+          <entry key="ts" value="4067" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -79,7 +93,7 @@
           <entry key="Dockerfile" value="69" />
           <entry key="JavaScript" value="41" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="TypeScript" value="3744" />
+          <entry key="TypeScript" value="4067" />
           <entry key="tsconfig" value="3" />
         </counts>
       </usages-collector>
@@ -89,97 +103,20 @@
     <favorites_list name="bnm-pos-server" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.65966755">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/shared/eventHandler.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="8" selection-start-line="8" selection-end-line="8" />
-                  <folding>
-                    <element signature="e#0#37#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="805">
-                  <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/posMessageBroker.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="429">
-                  <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/domains/customer/customerService.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1357">
-                  <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#0#47#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/domains/registerSale/registerSaleController.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="851">
-                  <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
-                  <folding>
-                    <element signature="e#0#35#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/middleware/checkJwt.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/store/node-couch.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2231">
-                  <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/domains/inventory/inventoryService.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/domains/customer/pointRequestedEventHandler.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="805">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -197,6 +134,7 @@
       <find>data</find>
       <find>addFilters</find>
       <find>decreaseCountBySale</find>
+      <find>PointConfirm</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -214,10 +152,8 @@
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/jest.config.js" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/__test__/couch.test.ts" />
         <option value="$PROJECT_DIR$/src/models/customer.ts" />
         <option value="$PROJECT_DIR$/src/constants/identifiers.ts" />
-        <option value="$PROJECT_DIR$/src/inversify.config.ts" />
         <option value="$PROJECT_DIR$/src/domains/product/productCreatedEventHandler.ts" />
         <option value="$PROJECT_DIR$/src/domains/inventory/inventoryController.ts" />
         <option value="$PROJECT_DIR$/src/domains/inventory/inventoryService.ts" />
@@ -227,11 +163,16 @@
         <option value="$PROJECT_DIR$/src/domains/import/importService.ts" />
         <option value="$PROJECT_DIR$/src/domains/tax/taxService.ts" />
         <option value="$PROJECT_DIR$/src/interfaces/store.ts" />
-        <option value="$PROJECT_DIR$/src/store/node-couch.ts" />
         <option value="$PROJECT_DIR$/src/store/couch.ts" />
         <option value="$PROJECT_DIR$/src/middleware/checkJwt.ts" />
         <option value="$PROJECT_DIR$/src/middleware/parseTenantId.ts" />
         <option value="$PROJECT_DIR$/src/domains/customer/customerService.ts" />
+        <option value="$PROJECT_DIR$/src/store/node-couch.ts" />
+        <option value="$PROJECT_DIR$/__test__/couch.test.ts" />
+        <option value="$PROJECT_DIR$/src/index.ts" />
+        <option value="$PROJECT_DIR$/src/inversify.config.ts" />
+        <option value="$PROJECT_DIR$/src/posMessageBroker.ts" />
+        <option value="$PROJECT_DIR$/src/domains/customer/pointRequestedEventHandler.ts" />
       </list>
     </option>
   </component>
@@ -250,9 +191,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="637" />
-    <option name="y" value="220" />
-    <option name="width" value="1566" />
+    <option name="x" value="594" />
+    <option name="y" value="89" />
+    <option name="width" value="1405" />
     <option name="height" value="1186" />
   </component>
   <component name="ProjectView">
@@ -271,31 +212,13 @@
             <path>
               <item name="bnm-pos-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="bnm-pos-server" type="462c0819:PsiDirectoryNode" />
-              <item name="__test__" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bnm-pos-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bnm-pos-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bnm-pos-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="bnm-pos-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domains" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bnm-pos-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bnm-pos-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domains" type="462c0819:PsiDirectoryNode" />
-              <item name="registerSale" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bnm-pos-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bnm-pos-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -316,12 +239,12 @@
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/src" />
       <recent name="$PROJECT_DIR$/src/domains/import" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -363,19 +286,6 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="NodeCouch test.Should be able to insert a doc." type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/__test__/couch.test.ts" />
-      <test-names>
-        <test-name value="NodeCouch test" />
-        <test-name value="Should be able to insert a doc." />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="NodeCouch test.Should be able to set security." type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -402,24 +312,37 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="NodeCouch test.test." type="JavaScriptTestRunnerJest" factoryName="Jest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__test__/couch.test.ts" />
+      <test-names>
+        <test-name value="NodeCouch test" />
+        <test-name value="test." />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Nodemon" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="node" node-parameters="$USER_HOME$/.nvm/versions/node/v8.11.1/bin/nodemon --inspect=3000" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/lib/src">
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Node.js.Nodemon" />
-      <item itemvalue="Jest.NodeCouch test.Should be able to insert a doc." />
       <item itemvalue="Jest.NodeCouch test.Should be able to update a doc." />
       <item itemvalue="Jest.NodeCouch test.Should be able to create a user." />
       <item itemvalue="Jest.NodeCouch test.Should be able to set security." />
       <item itemvalue="Jest.NodeCouch test.Should be able to get database list." />
+      <item itemvalue="Jest.NodeCouch test.test." />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.NodeCouch test.test." />
         <item itemvalue="Jest.NodeCouch test.Should be able to get database list." />
         <item itemvalue="Jest.NodeCouch test.Should be able to set security." />
         <item itemvalue="Jest.NodeCouch test.Should be able to create a user." />
         <item itemvalue="Jest.NodeCouch test.Should be able to update a doc." />
-        <item itemvalue="Jest.NodeCouch test.Should be able to insert a doc." />
       </list>
     </recent_temporary>
   </component>
@@ -444,54 +367,57 @@
       <workItem from="1544236256254" duration="4244000" />
       <workItem from="1545852670032" duration="735000" />
       <workItem from="1545919547054" duration="93000" />
+      <workItem from="1546230562237" duration="4840000" />
+      <workItem from="1546541541994" duration="3912000" />
+      <workItem from="1546574114222" duration="2101000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="NodeCouch_test_Should_be_able_to_read_a_doc_ - 2018.11.09 at 22h 47m 21s.xml">
-      <configuration name="NodeCouch test.Should be able to read a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_read_a_doc_ - 2018.11.09 at 22h 48m 06s.xml">
-      <configuration name="NodeCouch test.Should be able to read a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_read_a_doc_ - 2018.11.09 at 22h 49m 14s.xml">
-      <configuration name="NodeCouch test.Should be able to read a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_insert_a_doc_ - 2018.11.09 at 22h 53m 46s.xml">
-      <configuration name="NodeCouch test.Should be able to insert a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_update_a_doc_ - 2018.11.09 at 23h 25m 34s.xml">
-      <configuration name="NodeCouch test.Should be able to update a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_update_a_doc_ - 2018.11.09 at 23h 25m 59s.xml">
-      <configuration name="NodeCouch test.Should be able to update a doc." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_create_a_user_ - 2018.11.10 at 12h 46m 43s.xml">
-      <configuration name="NodeCouch test.Should be able to create a user." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
-    <history-entry file="NodeCouch_test_Should_be_able_to_create_a_user_ - 2018.11.10 at 12h 47m 23s.xml">
-      <configuration name="NodeCouch test.Should be able to create a user." configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="NodeCouch_test_Should_be_able_to_set_security_ - 2018.11.10 at 13h 24m 41s.xml">
       <configuration name="NodeCouch test.Should be able to set security." configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
     <history-entry file="NodeCouch_test_Should_be_able_to_get_database_list_ - 2018.11.10 at 20h 45m 34s.xml">
       <configuration name="NodeCouch test.Should be able to get database list." configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 13h 18m 53s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 13h 23m 55s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 13h 24m 42s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 15h 42m 20s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 15h 43m 38s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 16h 44m 30s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 16h 45m 12s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
+    <history-entry file="NodeCouch_test_test_ - 2019.01.01 at 16h 48m 34s.xml">
+      <configuration name="NodeCouch test.test." configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66443000" />
+    <option name="totallyTimeSpent" value="77296000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="637" y="220" width="1566" height="1186" extended-state="0" />
+    <frame x="594" y="89" width="1405" height="1186" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49937734" visible="true" weight="0.14174758" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49937734" visible="true" weight="0.158237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5006227" side_tool="true" weight="0.1488178" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" x="1278" y="45" width="1228" height="1355" id="Run" order="2" type="WINDOWED" weight="0.29651657" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4993046" visible="true" weight="0.44515538" />
+      <window_info anchor="bottom" x="997" y="45" width="1509" height="1355" id="Run" order="2" type="WINDOWED" weight="0.29651657" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993046" weight="0.2833638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -510,9 +436,7 @@
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/store/node-couch.js" />
         <option value="$PROJECT_DIR$/src/interfaces/store.js" />
-        <option value="$PROJECT_DIR$/src/store/couch.js" />
       </list>
     </option>
   </component>
@@ -523,73 +447,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts</url>
-          <line>43</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts</url>
-          <line>30</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/posMessageBroker.ts</url>
+          <line>71</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jest.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="114" column="33" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/auth/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="157" column="67" lean-forward="true" selection-start-line="157" selection-start-column="67" selection-end-line="157" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/Subscriber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="92" column="17" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/store/storeService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="19" column="70" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/employee/employeeService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/store/node-couch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -653,13 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -740,24 +599,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/auth.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/domains/category/categoryService.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
           <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/interfaces/store.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -775,11 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/customer/customerContorller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/couch.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -794,31 +634,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/inversify.config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="65" column="83" selection-start-line="65" selection-start-column="83" selection-end-line="65" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/types/inventoryTransaction.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__test__/couch.test.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -833,26 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/customer/customerService.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="19" selection-end-line="62" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -860,9 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,24 +669,142 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/domains/registerSale/registerSaleClosedEventHandler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/node-couch.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2231">
-          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        <state relative-caret-position="98">
+          <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__test__/couch.test.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/domains/inventory/inventoryService.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="92" column="19" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+        <state relative-caret-position="552">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3611">
+          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/auth.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="n#express#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inversify.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="58" column="50" selection-start-line="58" selection-start-column="50" selection-end-line="58" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domains/customer/customerContorller.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domains/customer/customerService.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/posMessageBroker.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="415">
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/pos-models.es5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/pos-models.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="4838" column="27" selection-start-line="4838" selection-start-column="8" selection-end-line="4838" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/types/messages.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/lib/pos-models.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pos-models/dist/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domains/customer/pointRequestedEventHandler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

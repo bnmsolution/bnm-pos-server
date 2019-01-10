@@ -61,6 +61,16 @@ export class NodeCouch {
     return undefined;
   }
 
+  find(dbName: string, options: any = {}): Promise<any> {
+    return this.axiosInstance.post(`${dbName}/_find`, options)
+      .then(response => {
+        return response.data.docs;
+      })
+      .catch(error => {
+        return error.response.data
+      })
+  }
+
   get(dbName: string, docId: string): Promise<any> {
     return this.axiosInstance.get(`${dbName}/${docId}`)
       .then(response => {
@@ -93,6 +103,16 @@ export class NodeCouch {
       .catch(error => {
         return error.response.data
       })
+  }
+
+  delete(dbName: string, docId: string, rev: string): Promise<DocumentUpdatedResponse> {
+    return this.axiosInstance.delete(`${dbName}/${docId}?rev=${rev}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      return error.response.data
+    })
   }
 
   createUser(user): Promise<any> {

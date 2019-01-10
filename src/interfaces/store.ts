@@ -26,4 +26,6 @@ export interface IStore {
   setDatabaseSecurity(tenantId: string, security: any): Promise<any>;
 
   bulkInsert(tenantId: string, docs: any[], documentName: string): Promise<any>;
+
+  find(dbName: string, options: any): Promise<any>;
 }

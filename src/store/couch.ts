@@ -63,6 +63,10 @@ export class CouchDb implements IStore {
       .then(dbs => dbs.indexOf(this.databaseName(tenantId)) > -1));
   }
 
+  find(tenantId: string, options: any = {}): Promise<any> {
+    return this._couch.find(this.databaseName(tenantId), options);
+  }
+
   get(tenantId: string, documentId: string): Promise<any> {
     return this._couch.get(this.databaseName(tenantId), documentId)
       .then((doc) => {
@@ -130,13 +134,12 @@ export class CouchDb implements IStore {
   }
 
   delete(tenantId: string, documentId: string, revision: string): Promise<any> {
-    // return this._couch.del(this.databaseName(tenantId), documentId, revision)
-    //   .then(({data}) => {
-    //     return data;
-    //   }, err => {
-    //     return err;
-    //   });
-    throw new Error('Method not implemented.');
+    return this._couch.delete(this.databaseName(tenantId), documentId, revision)
+      .then(response => {
+        return response;
+      }, err => {
+        return err;
+      });
   }
 
   uniqid(numIds: number): Promise<any> {

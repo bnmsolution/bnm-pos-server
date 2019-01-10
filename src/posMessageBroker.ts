@@ -2,6 +2,9 @@ import socketIO from 'socket.io';
 import jwt = require('jsonwebtoken');
 import jwksClient = require('jwks-rsa');
 
+import { EventPublisher } from './shared/eventPublisher';
+import { PointRequestedEvent } from './domains/customer/pointRequestedEventHandler';
+
 const client = jwksClient({
   jwksUri: 'https://bmsolution.auth0.com/.well-known/jwks.json'
 });
@@ -10,9 +13,10 @@ export class PosMessageBroker {
   io: any;
   sockets = {};
 
-  constructor(server) {
+  constructor(server, public eventPublisher: EventPublisher) {
     this.io = socketIO(server);
 
+    // middleware for authentication
     this.io.use((socket, next) => {
       const token = socket.handshake.query.token;
 
@@ -24,24 +28,33 @@ export class PosMessageBroker {
       });
     });
 
+
     this.io.on('connection', socket => {
-      const tenantId = socket.handshake.query.tenantId;
-      console.log('User connected: ' + tenantId);
-      this.sockets[tenantId] = socket;
+      const { tenantId, source } = socket.handshake.query;
+      console.log('User connected: ' + tenantId + '(' + source + ')');
+      this.sockets[`${tenantId}@${source}`] = socket;
 
-      // socket.on('sale', (data) => {
+      Object.keys(this.sockets).forEach(k => console.log(k));
 
-      //   console.log('emitting event to point');
-      //   socket.broadcast.emit('point', data);
-      // });
+      socket.on('request', event => {
+        this.handleRequest(event);
+      });
     });
   }
 
   sendMessage(tenantId, message) {
-    const socket = this.sockets[tenantId];
+    const socket = this.sockets[`${tenantId}@point`];
     if (socket) {
       socket.emit('point', message);
-      console.log('sendMessage to '  + tenantId);
+      console.log('sendMessage to ' + `${tenantId}@point`);
+    }
+  }
+
+  sendMessageToPos(tenantId, message) {
+    const socket = this.sockets[`${tenantId}@pos`];
+    if (socket) {
+      socket.emit('pos', message);
+      console.log('sendMessage to ' + `${tenantId}@pos`);
     }
   }
 
@@ -50,6 +63,20 @@ export class PosMessageBroker {
       var signingKey = key.publicKey || key.rsaPublicKey;
       callback(null, signingKey);
     });
+  }
+
+  private handleRequest(event: any) {
+    console.log(`handling ${event.type}`);
+    switch (event.type) {
+      case 'PointRequestedEvent': {
+        this.eventPublisher.publish(new PointRequestedEvent(event.tenantId, event.saleId,
+          event.phoneNumber, event.enablePoints));
+          break;
+      }
+      default: {
+        throw new Error(`Cannot find event handler for ${event.type}`);
+      }
+    }
   }
 }
 
