@@ -42,6 +42,7 @@ export class RegisterSaleClosedEventHandler extends EventHandler {
       .then(store => {
         const enablePoints = this.customerService.calculateEarnableRewordPoints(sale.payments, store);
         posMessageBroker.sendMessage(tenantId, {
+          type: 'POINT_REQUEST',
           saleId: sale.id,
           enablePoints
         });
@@ -51,7 +52,7 @@ export class RegisterSaleClosedEventHandler extends EventHandler {
   updateCustomer(tenantId: string, sale: RegisterSale) {
     Promise.all([this.storeService.getStore(tenantId, sale.storeId), this.customerService.getCustomer(tenantId, sale.customerId)])
       .then(([store, customer]) => {
-        this.customerService.calculateCustomerValues(customer, sale.status, sale.payments, store);
+        this.customerService.calculateCustomerValues(customer, sale, store);
         return this.customerService.updateCustomer(tenantId, customer);
       });
   }

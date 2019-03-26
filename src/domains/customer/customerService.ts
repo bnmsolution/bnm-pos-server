@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify';
-import { Customer, RegisterSaleStatus, RegisterPayment, PaymentType, PosStore, PointRequest, PointRequestAccepted } from 'pos-models';
+import { Customer, RegisterSaleStatus, RegisterPayment, PaymentType, PosStore, PointRequest, PointRequestAccepted, RegisterdBy, PointUsageTrasaction, RegisterSale } from 'pos-models';
 const uuid = require('uuid/v1');
 
 import { IStore } from '../../interfaces/store';
@@ -61,29 +61,39 @@ export class CustomerService implements ICustomerService {
     const customer = await this.findCustomerByPhoneNumber(tenantId, customerPhoneNumber);
 
     if (customer === null) {
+      // todo: extract customer creation logic
       const newCustomer: any = {
         id: uuid(),
+        name: '',
         phone: customerPhoneNumber,
-        currentPoints: enablePoints
+        dateOfJoin: new Date(),
+        totalStorePoint: 0,
+        currentStorePoint: 0,
+        totalSalesCount: 0,
+        totalSalesAmount: 0,
+        totalReturnsCount: 0,
+        registerdBy: RegisterdBy.PointApp,
+        pointUsageTransactions: []
       };
       this.createCustomer(tenantId, newCustomer);
-      return new PointRequestAccepted('', customerPhoneNumber, newCustomer.id, enablePoints, newCustomer.currentPoints, true);
+      return new PointRequestAccepted('', customerPhoneNumber, newCustomer.id, enablePoints, enablePoints, true);
     } else {
       return new PointRequestAccepted(customer.name, customer.phone, customer.id, enablePoints, customer.currentStorePoint + enablePoints, false);
     }
   }
 
-  calculateCustomerValues(customer: Customer, saleStatus: RegisterSaleStatus, payments: RegisterPayment[], store: PosStore) {
+  calculateCustomerValues(customer: Customer, sale: RegisterSale, store: PosStore) {
+    const { payments, status, salesDate} = sale;
     const totalCashPaid = this.getTotalAmountByPaymentType(PaymentType.Cash, payments);
     const totalCreditCardPaid = this.getTotalAmountByPaymentType(PaymentType.CreditCard, payments);
     const totalPaidStorePoints = this.getTotalAmountByPaymentType(PaymentType.StorePoint, payments);
 
     customer.totalSalesAmount += totalCashPaid + totalCreditCardPaid;
 
-    if (saleStatus === RegisterSaleStatus.Completed) {
+    if (status === RegisterSaleStatus.Completed) {
       customer.totalSalesCount++;
-      customer.lastPurchasedDate = new Date();
-    } else if (saleStatus === RegisterSaleStatus.ReturnCompleted) {
+      customer.lastPurchasedDate = salesDate;
+    } else if (status === RegisterSaleStatus.ReturnCompleted) {
       customer.totalReturnsCount++;
     }
 
@@ -95,8 +105,17 @@ export class CustomerService implements ICustomerService {
     }
 
     if (totalPaidStorePoints > 0) {
+      const transcation: PointUsageTrasaction = {
+        saleId: sale.id,
+        amount: totalPaidStorePoints,
+        date: salesDate
+      }
       customer.currentStorePoint -= totalPaidStorePoints;
-      // todo: add point transaction
+
+      if (customer.pointUsageTransactions === undefined) {
+        customer.pointUsageTransactions = [];
+      }
+      customer.pointUsageTransactions.push(transcation)
     }
   }
 
@@ -118,6 +137,5 @@ export class CustomerService implements ICustomerService {
       .map(p => p.amount)
       .reduce((acc, cur) => acc + cur, 0);
   }
-
 
 }

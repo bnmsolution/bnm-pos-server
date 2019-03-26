@@ -1,5 +1,5 @@
 import { inject } from 'inversify';
-import { PointRequestAccepted, PointRequest, RegisterSale } from 'pos-models';
+import { Customer, RegisterSale } from 'pos-models';
 
 import SERVICE_IDENTIFIER from '../../constants/identifiers';
 import { CustomerService } from './customerService';
@@ -60,8 +60,18 @@ export class ApplyRewardPointEventHandler extends EventHandler {
   private updateCustomer(tenantId: string, sale: RegisterSale) {
     Promise.all([this.storeService.getStore(tenantId, sale.storeId), this.customerService.getCustomer(tenantId, sale.customerId)])
       .then(([store, customer]) => {
-        this.customerService.calculateCustomerValues(customer, sale.status, sale.payments, store);
+        this.customerService.calculateCustomerValues(customer, sale, store);
         return this.customerService.updateCustomer(tenantId, customer);
-      });
+      })
+      .then(customer => {
+        this.sendConfirmMessageToPos(tenantId, sale.id, customer);
+      })
+  }
+
+  private sendConfirmMessageToPos(tenantId:string, saleId: string, customer: Customer) {
+    posMessageBroker.sendMessageToPos(tenantId, {
+      saleId,
+      customer
+    });
   }
 }
