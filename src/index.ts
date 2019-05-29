@@ -9,9 +9,9 @@ import SERVICE_IDENTIFIER from './constants/identifiers';
 import { checkJwt } from './middleware/checkJwt';
 import { parsetTenantId } from './middleware/parseTenantId';
 import { RegistrableController } from './interfaces/registerableController';
-import { EventHandler } from "./shared/eventHandler";
 import { PosMessageBroker } from './posMessageBroker';
-import {EventPublisher} from './shared/eventPublisher';
+import { EventPublisher } from './shared/eventPublisher';
+import { errorHandler } from './middleware/errorHandler';
 
 const app: express.Application = express();
 
@@ -43,5 +43,7 @@ app.route('/onchange')
     console.log(req.body);
     res.json({ status: true });
   });
+
+app.use(errorHandler);
 
 server.listen(3000);

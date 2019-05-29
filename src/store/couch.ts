@@ -98,8 +98,11 @@ export class CouchDb implements IStore {
         return document;
       }, err => {
         // either request error occured
-        console.log(err);
-        return err;
+        console.group(`[ERROR] Couchdb insert ERROR. TenantId: ${tenantId}`);
+        console.error(document);
+        console.error(err.stack);
+        console.groupEnd();
+        throw new Error('Couchdb insert ERROR')
       });
   }
 

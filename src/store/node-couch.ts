@@ -90,9 +90,9 @@ export class NodeCouch {
       .then(response => {
         return response.data;
       })
-      .catch(error => {
-        return error.response.data
-      })
+      // .catch(error => {
+      //   return error.response.data
+      // })
   }
 
   update(dbName: string, doc: any): Promise<DocumentUpdatedResponse> {
