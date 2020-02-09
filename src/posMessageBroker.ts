@@ -59,10 +59,10 @@ export class PosMessageBroker {
   }
 
   getKey(header, callback) {
-    client.getSigningKey(header.kid, function (err, key) {
-      var signingKey = key.publicKey || key.rsaPublicKey;
+    client.getSigningKey(header.kid, (err, key: jwksClient.SigningKey) => {
+      const signingKey = key.getPublicKey();
       callback(null, signingKey);
-    });
+    })
   }
 
   private handleRequest(event: any) {

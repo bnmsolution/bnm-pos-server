@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
   "dependencies": {
     "@types/dotenv": "^4.0.3",
     "axios": "^0.18.0",
@@ -13,7 +16,7 @@
     "express-jwt-authz": "^1.0.0",
     "inversify": "^4.3.0",
     "jsonwebtoken": "^8.4.0",
-    "jwks-rsa": "^1.2.0",
+    "jwks-rsa": "^1.6.2",
     "node-couchdb": "^1.2.0",
     "pos-models": "file:../pos-models/pos-models-0.0.34.tgz",
     "reflect-metadata": "^0.1.10",
